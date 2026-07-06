@@ -18,7 +18,7 @@ const handleLogout = async(req, res) => {
     const result = await foundUser.save()
     console.log(result);
     // when deleting cookie, have same options as when sending/creating cookie except; maxAge, expiration
-    res.clearCookie('jwt', { httpOnly: true, sameSite: true, secure: true });
+    res.clearCookie('jwt', { httpOnly: true, sameSite: true});
     res.sendStatus(204);
 }
 module.exports = { handleLogout }

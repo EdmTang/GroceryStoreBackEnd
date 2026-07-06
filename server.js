@@ -1,5 +1,5 @@
 require('dotenv').config();
-const PORT = process.env.PORT || 9950
+const PORT = process.env.PORT
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -34,6 +34,8 @@ app.use('/refresh', require('./route/refresh'))
 app.use(require('./Middleware/verifyJWT')) // AccessToken is needed to access routes below this one
 
 app.use('/stock', require('./route/inStock'));
+
+app.use('/order', require('./route/placeOrder'));
 
 
 

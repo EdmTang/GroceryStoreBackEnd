@@ -34,8 +34,8 @@ const handleLogin = async (req, res) => {
         const result = await foundUser.save()
         console.log(result);
 
-        res.cookie('jwt', refreshToken, { httpOnly: true, sameSite: true,  maxAge: 24 * 60 * 60 * 1000 }); // secure: true,
-        res.json(accessToken);
+        res.cookie('jwt', refreshToken, { httpOnly: true, sameSite: 'lax', secure: false, maxAge: 24 * 60 * 60 * 1000 }); // secure: true,
+        res.json({accessToken});
     }
     else {
         res.status(401).json({ 'message': 'Unauthorized' }); //Unauthorized

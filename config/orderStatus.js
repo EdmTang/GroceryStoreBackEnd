@@ -1,0 +1,8 @@
+const ORDER_STATUS = {
+    PENDING: 4444,
+    TRANSIT: 8008,
+    DELIVERED: 9009,
+    CANCELLED: 9999,
+};
+
+module.exports = ORDER_STATUS;
