@@ -9,7 +9,7 @@ verifyJWT = (req, res, next) => {
         token,
         process.env.ACCESS_TOKEN_SECRET,
         (err, decoded) => {
-            if (err) return res.sendStatus(403); //invalid token
+            if (err) return res.sendStatus(401); //invalid token
             // decodes the username from the token and adds it to the req object so that it can be used in the route handler
             req.user = decoded.UserInfo.username;
             req.roles = decoded.UserInfo.roles

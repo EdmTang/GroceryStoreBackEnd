@@ -2,7 +2,7 @@ const Produce = require('../data/Produce');
 
 const getAllProduce = async (req, res, next) => {
     const items = await Produce.find();
-    if(!items) return res.Status(204).json({'message': 'Nohing Found'});
+    if(!items) return res.Status(204).json({'message': 'Nothing Found'});
     res.json(items);
 };
 

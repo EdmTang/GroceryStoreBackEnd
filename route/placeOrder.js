@@ -5,8 +5,8 @@ const verifyRoles = require('../Middleware/verfiyRoles');
 const roles = require('../config/roles_list');
 
 router.route('/')
-    .get(verifyRoles(roles.User), orderController.getOrder)
-    .post(verifyRoles(roles.User), orderController.makeOrder)
-    .put(verifyRoles(roles.User), orderController.updateOrder)
-    .delete(verifyRoles(roles.User), orderController.deleteOrder)
+    .get(orderController.getOrder)
+    .post(orderController.makeOrder)
+    .put(orderController.updateOrder)
+    .delete(orderController.deleteOrder)
 module.exports = router;
